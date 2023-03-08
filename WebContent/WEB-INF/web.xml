@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Gait</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <!-- 配置DispatchcerServlet -->
+<!-- The front controller of this Spring Web application, responsible for handling all application requests -->
+	<servlet>
+		<servlet-name>Main</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- Map all requests to the DispatcherServlet for handling -->
+	<servlet-mapping>
+		<servlet-name>Main</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+<!-- 至此请求已交给Spring Web MVC框架处理，因此我们需要配置Spring的配置文件， -->  
+    <!-- 默认DispatcherServlet会加载WEB-INF/[DispatcherServlet的Servlet名字,也就是上面的Main-servlet.xml配置文件。 -->  
+    <!-- 即Main-servlet.xml -->  
+</web-app>

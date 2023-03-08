@@ -1,0 +1,47 @@
+﻿进入openpose虚拟环境（需要装TensorFlow1.x以及其余依赖库）
+
+怎么进入：
+  激活python 环境
+   Anaconda Prompt ------>进入 (openpose)c:\Users\ASUS  ------>输入E: 回车------>进入（openpose）E:> 
+      ----->输入 cd E:\3DPose-keypoints ------>进入 （openpose）:\3DPose-keypoints
+
+使用：a. 图片模式
+          b. 视频模式
+
+
+一、单个视频或图片执行
+工程目录：{root}\3DPose-keypoints
+运行前请先激活工程运行所需要的conda环境
+    
+
+二、单个视频或图片执行
+
+a. 图片模式：
+   i). 将待测试的图片拷贝到工程目录下的input/image文件夹
+  ii). python run.py ./input/image/ i 
+    （注意到，run.py后紧跟两个参数，这两个参数中间有一个空格，
+       第一个参数是图片文件夹的路径，第二个参数i是image模式的第一个字母i ）
+  iiii). 运行结束后，在工程目录下，./output/image文件夹里找结果，有Excel和图片结果
+b.视频模式：
+   i). 将待测试的视频拷贝到工程目录下的input/video/文件夹
+   ii). python run.py ./input/video/input.mp4 v 
+      (注意到，run.py后紧跟两个参数，这两个参数中间有一个空格，
+       第一个参数是视频的路径而不是包含视频的文件夹的路径，
+       第二个参数v是video模式的第一个字母v ）
+  iii). 运行结束后，在工程目录下，./output/video文件夹里找结果，有视频中每一帧对应的Excel和图片结果
+
+需要注意，每次运行都会删除以前的运行结果，及时移走需要备份的运行结果。
+
+//目前未实现批量处理视频功能，批量处理在2070上
+三、批量执行视频
+1. 首先将多个视频全部拷贝到  E:\3DhumanPose-GPU\input\lyt
+2. 再将这些视频同样复制到  E:\3DhumanPose-GPU\input\video  下
+3. 激活python 环境
+   Anaconda Prompt ------>进入 (base)c:\Users\ASUS  ------>输入E: 回车------>进入（base）E:> 
+      ----->输入 cd E:\3DhumanPose-GPU ------>进入 （base）:\3DhumanPose-GPU 
+4. 输入批量处理命令  pothon    ，回车
+5.开始执行，处理好的数据在工程目录下，./output/video文件夹里，文件名自动修改。
+注意：1.bat,2.bat,libjcc.dll,libjsybheap.dll,pbvm90.dll,pathon.exe是批处理文件，不要删
+
+6. 处理完成后，在运形环境中输入 delfile,然后回车，目的是清理./output/video文件夹下，每一个视频每一帧的图片，只保留.csv文件。
+

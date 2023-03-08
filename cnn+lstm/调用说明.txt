@@ -1,0 +1,2 @@
+已将第一方法修改，现在调用get_feature.py并传入一个人的时空特征矩阵可得到网络学习后的特征向量。
+指令：python get_feature.py "E:\Gait-System\Gait-zhangdi\Matrix\video1\real_one.csv" "E:\Gait-System\Gait-zhangdi\Matrix\video1\real_two.csv"
